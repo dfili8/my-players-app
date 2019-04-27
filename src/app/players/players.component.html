@@ -1,0 +1,21 @@
+<h2>My 5ive</h2>
+<ul class="players">
+  <li *ngFor='let player of players' (click)="onSelect(player)" [class.selected]="player === selectedPlayer">
+    <span class="badge">{{player.number}}</span>{{player.name}} - {{player.position}}
+  </li>
+</ul>
+
+<div *ngIf="selectedPlayer" class="details">
+  <h2>{{selectedPlayer.name | uppercase}} Details</h2>
+  <div><span>Number: </span>{{selectedPlayer.number}}</div>
+  <div>
+    <label>Name:
+      <input [(ngModel)]="selectedPlayer.name" placeholder="name"/>
+    </label>
+  </div>
+  <div>
+    <label>Position:
+      <input [(ngModel)]="selectedPlayer.position" placeholder="position"/>
+    </label>
+  </div>
+</div>
