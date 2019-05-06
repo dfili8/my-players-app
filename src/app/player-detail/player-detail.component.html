@@ -1,0 +1,14 @@
+<div *ngIf="player" class="details">
+  <h2>{{player.name | uppercase}} Details</h2>
+  <div><span>Number: </span>{{player.number}}</div>
+  <div>
+    <label>Name:
+      <input [(ngModel)]="player.name" placeholder="name"/>
+    </label>
+  </div>
+  <div>
+    <label>Position:
+      <input [(ngModel)]="player.position" placeholder="position"/>
+    </label>
+  </div>
+</div>
