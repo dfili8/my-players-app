@@ -1,8 +1,14 @@
-<h2>My 5ive</h2>
-<ul class="players">
-  <li *ngFor='let player of players' (click)="onSelect(player)" [class.selected]="player === selectedPlayer">
-    <span class="badge">{{player.number}}</span>{{player.name}} - {{player.position}}
-  </li>
-</ul>
+<div class="container"> 
+  <div>
+    <h2>My 5ive</h2>
+    <ul class="players">
+      <li *ngFor='let player of players' (click)="onSelect(player)" [class.selected]="player === selectedPlayer">
+        <span class="badge">{{player.number}}</span>{{player.name}} - {{player.position}}
+      </li>
+    </ul>
+  </div>
 
-<app-player-detail [player]="selectedPlayer"></app-player-detail>
+  <div>
+    <app-player-detail [player]="selectedPlayer"></app-player-detail>
+  </div>
+</div>
