@@ -1,5 +1,5 @@
 export class Player {
-    number: number;
+    id: number;
     name: string;
     position: string;
 }

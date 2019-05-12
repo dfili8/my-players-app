@@ -1,6 +1,6 @@
 <div *ngIf="player" class="details">
   <h2>{{player.name | uppercase}} Details</h2>
-  <div><span>Number: </span>{{player.number}}</div>
+  <div><span>Number: </span>{{player.id}}</div>
   <div>
     <label>Name:
       <input [(ngModel)]="player.name" placeholder="name"/>
@@ -11,4 +11,5 @@
       <input [(ngModel)]="player.position" placeholder="position"/>
     </label>
   </div>
+  <button (click)="goBack()">Go back</button>
 </div>

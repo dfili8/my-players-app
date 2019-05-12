@@ -9,7 +9,6 @@ import { PlayerService } from '../player.service';
 })
 export class PlayersComponent implements OnInit {
   title = 'My Players';
-  selectedPlayer: Player;
 
   players: Player[];
 
@@ -17,10 +16,6 @@ export class PlayersComponent implements OnInit {
 
   ngOnInit() {
     this.getPlayers();
-  }
-
-  onSelect(player: Player): void {
-    this.selectedPlayer = player;
   }
 
   getPlayers(): void {
