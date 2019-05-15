@@ -1,7 +1,7 @@
 <h2>My Players</h2>
 <div>
   <label>Player name:
-    <input #playerName />
+    <input #playerName autocomplete="off"/>
   </label>
   <!-- (click) passes input value to add() and then clears the input -->
   <button (click)="add(playerName.value); playerName.value=''">

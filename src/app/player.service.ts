@@ -89,4 +89,16 @@ export class PlayerService {
       );
   }
 
+  /* GET players whose name contains search term */
+  searchPlayers(term: string): Observable<Player[]> {
+    if (!term.trim()) {
+      // if not search term, return empty player array.
+      return of([]);
+    }
+    return this.http.get<Player[]>(`${this.playersUrl}/?name=${term}`).pipe(
+      tap(_ => this.log(`found players matching "${term}"`)),
+      catchError(this.handleError<Player[]>('searchPlayers', []))
+    );
+  }
+
 }
