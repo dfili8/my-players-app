@@ -11,6 +11,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
+import { PlayerSearchComponent } from './player-search/player-search.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { InMemoryDataService } from './in-memory-data.service';
     PlayerDetailComponent,
     MessagesComponent,
     DashboardComponent,
+    PlayerSearchComponent,
   ],
   imports: [
     BrowserModule,
