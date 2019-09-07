@@ -1,6 +1,11 @@
 <nav>
-    <button routerLink="/players">Players</button>
-    <button routerLink="/dashboard">Dashboard</button>
+    <div class="buttons has-addons is-centered are-large">
+        <button class="button is-rounded is-link is-outlined" routerLink="/dashboard">Dashboard</button>
+        <button class="button is-rounded is-link is-outlined" routerLink="/players">My Players</button>
+    </div>
 </nav>
-<router-outlet></router-outlet>
-<app-messages></app-messages>
+
+<div class="container">
+    <router-outlet></router-outlet>
+    <!-- <app-messages></app-messages> -->
+</div>

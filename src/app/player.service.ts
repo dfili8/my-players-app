@@ -63,7 +63,7 @@ export class PlayerService {
   updatePlayer(player: Player): Observable<any> {
     return this.http.put(this.playersUrl, player, httpOptions)
       .pipe(
-        tap(_ => this.log(`updated hero id=${player.id}`)),
+        tap(_ => this.log(`updated player id=${player.id}`)),
         catchError(this.handleError<any>('updatePlayer'))
       );
   }
@@ -72,7 +72,7 @@ export class PlayerService {
   addPlayer (player: Player): Observable<Player> {
     return this.http.post<Player>(this.playersUrl, player, httpOptions)
       .pipe(
-        tap((newPlayer: Player) => this.log(`added hero w/ id=${newPlayer.id}`)),
+        tap((newPlayer: Player) => this.log(`added player w/ id=${newPlayer.id}`)),
         catchError(this.handleError<Player>('addPlayer'))
       );
   }

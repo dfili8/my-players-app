@@ -1,3 +1,6 @@
-.details > div{
-    margin: 20px;
+.contain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
 }

@@ -1,8 +1,25 @@
-<h3>Top Players</h3>
-<div class="grid grid-pad">
-  <a *ngFor="let player of players" class="col-1-4" routerLink="/detail/{{player.id}}">
-    <div class="module player">
-      <h4>{{player.name}}</h4>
+<div class="contain">
+  <div class="card">
+    <header class="card-header card-content">
+      <h1 class="subtitle is-1">Dashboard</h1>
+    </header>
+    <div class="card-content">
+      <div class="columns">
+        <a *ngFor="let player of players" routerLink="/detail/{{player.id}}">
+          <div class="column">
+            <div class="card">
+              <div class="card-header card-content">
+                <h4>{{player.name}} - {{player.position}}</h4>
+              </div>
+              <div class="card-image">
+                <figure class="image is-280x280">
+                  <img src="{{player.image}}">
+                </figure>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
     </div>
-  </a>
+  </div>
 </div>

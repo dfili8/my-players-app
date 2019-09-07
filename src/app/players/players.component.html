@@ -1,18 +1,28 @@
-<h2>My Players</h2>
-<div>
-  <label>Player name:
-    <input #playerName />
-  </label>
-  <!-- (click) passes input value to add() and then clears the input -->
-  <button (click)="add(playerName.value); playerName.value=''">
-    Add
-  </button>
+<div class="contain">
+  <div class="card">
+    <header class="card-header card-content">
+      <h1 class="subtitle is-1">My Players</h1>
+    </header>
+    <div class="card-content">
+      <label class="label is-medium">Add player</label>
+      <div class="field has-addons">
+        <div class="control">
+          <input #playerName class="input is-info is-medium" type="text" placeholder="Player Name">
+        </div>
+        <div class="control">
+          <button class="button is-info is-medium" (click)="add(playerName.value); playerName.value=''"><i class="fas fa-plus"></i></button>
+        </div>
+      </div>
+      <ul>
+        <li *ngFor="let player of players">
+          <div class="tags has-addons are-large">
+            <a routerLink="/detail/{{player.id}}">
+              <span class="tag">{{player.name}}</span>
+            </a>
+            <a class="tag is-danger" title="delete player" (click)="delete(player)"><i class="fa fa-times"></i></a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
-<ul class="players">
-  <li *ngFor="let player of players">
-    <a routerLink="/detail/{{player.id}}">
-      <span class="badge">{{player.id}}</span> {{player.name}}
-    </a>
-    <button class="delete" title="delete hero" (click)="delete(player)">x</button>
-  </li>
-</ul>

@@ -8,25 +8,20 @@ import { Injectable } from '@angular/core';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const players = [
-      { id: 24, name: 'Kobe Byrant', position: 'Shooting Guard' },
-      { id: 23, name: 'Michael Jordan', position: 'Shooting Guard' },
-      { id: 30, name: 'Steph Curry', position: 'Point Guard' },
-      { id: 32, name: 'Shaq ONeil', position: 'Center' },
-      { id: 3, name: 'Ben Wallace', position: 'Center' },
-      { id: 1, name: 'Tracy McGrady', position: 'Shooting Guard' },
-      { id: 21, name: 'Tim Duncan', position: 'Power Forward' },
-      { id: 3, name: 'Allen Iverson', position: 'Point Guard' },
-      { id: 71, name: 'Luka Doncic', position: 'Shooting Guard' },
-      { id: 41, name: 'Dirk Nowitski', position: 'Small Forward' }
+      { id: 1, name: 'Kobe Byrant', position: 'SG', number: 24, team: 'Lakers', image: "assets/bryant.jpeg" },
+      { id: 7, name: 'Allen Iverson', position: 'PG', number: 3, team: 'Sixers', image: "assets/iverson.jpeg" },
+      { id: 3, name: 'Steve Nash', position: 'PG', number: 13, team: 'Suns', image: "assets/nash.jpeg" },
+      { id: 4, name: 'Shaq O\'Neal', position: 'C', number: 32, team: 'Heat', image: "assets/oneal.jpeg" },
+      { id: 6, name: 'LeBron James', position: 'SF', number: 23, team: 'Lakers', image: "assets/james.jpeg" },
     ];
     return {players};
   }
 
-  // Overrides the genId method to ensure that a hero always has an id.
-  // If the heroes array is empty,
+  // Overrides the genId method to ensure that a player always has an id.
+  // If the players array is empty,
   // the method below returns the initial number (11).
-  // if the heroes array is not empty, the method below returns the highest
-  // hero id + 1.
+  // if the players array is not empty, the method below returns the highest
+  // player id + 1.
   genId(players: Player[]): number {
     return players.length > 0 ? Math.max(...players.map(player => player.id)) + 1 : 11;
   }
